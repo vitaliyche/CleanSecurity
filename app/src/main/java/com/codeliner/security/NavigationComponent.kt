@@ -3,6 +3,7 @@ package com.codeliner.security
 import androidx.compose.runtime.Composable
 import androidx.navigation.compose.*
 import com.codeliner.security.ui.*
+import com.codeliner.security.ui.theme.CleanScreen
 
 @Composable
 fun NavigationComponent() {
@@ -11,7 +12,7 @@ fun NavigationComponent() {
 
     NavHost(
         navController = navController,
-        startDestination = ScreenRoute.StartScreen.route
+        startDestination = ScreenRoute.CleanScreen.route
     ) {
 
         composable(route = ScreenRoute.StartScreen.route) {
@@ -24,6 +25,10 @@ fun NavigationComponent() {
 
         composable(route = ScreenRoute.MainScreen.route) {
             MainScreen()
+        }
+
+        composable(route = ScreenRoute.CleanScreen.route) {
+            CleanScreen()
         }
     }
 

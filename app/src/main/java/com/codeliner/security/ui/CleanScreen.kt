@@ -1,10 +1,10 @@
-package com.codeliner.security.ui
+package com.codeliner.security.ui.theme
 
-import android.widget.ImageButton
-import android.widget.ProgressBar
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.*
 import androidx.compose.runtime.Composable
@@ -19,10 +19,10 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.codeliner.security.R
-
+import com.codeliner.security.ScreenRoute
 
 @Composable
-fun MainScreen() {
+fun CleanScreen() {
 
     Column(
         modifier = Modifier
@@ -32,85 +32,85 @@ fun MainScreen() {
     ) {
 
         Text(
-            text = "Device Health: 40%",
+            text = "Clean Memory",
             fontSize = 24.sp,
             fontWeight = FontWeight.Bold,
             color = Color.White
         )
 
 
-            Box(modifier = Modifier.padding(top = 8.dp)
-            ) {
+        Box(
+            modifier = Modifier.padding(top = 8.dp)
+        ) {
 
-                Divider(
-                    thickness = 6.dp,
-                    modifier = Modifier
-                        .fillMaxWidth()
-                        .background(Color.Gray, shape = RoundedCornerShape(12.dp))
-                )
+            Divider(
+                thickness = 6.dp,
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .background(Color.Gray, shape = RoundedCornerShape(12.dp))
+            )
 
-                Divider(
-                    thickness = 6.dp,
-                    modifier = Modifier
-                        .fillMaxWidth(0.4f)
-                        .background(Color.Yellow, shape = RoundedCornerShape(12.dp))
-                )
+            Divider(
+                thickness = 6.dp,
+                modifier = Modifier
+                    .fillMaxWidth(0.25f)
+                    .background(Color.Yellow, shape = RoundedCornerShape(12.dp))
+            )
 
-            }
+        }
 
         Text(
-            text = "This is your main dashboard. To fully experience the power of the app, " +
-                    "please complete the available steps to unlock new features.",
+            text = "While cleaning memory, Clean Security does not delete your personal data",
             fontSize = 15.sp,
             color = Color.White,
             modifier = Modifier.padding(top = 16.dp)
         )
 
-            Row(
-                modifier = Modifier
-                    .fillMaxWidth(1f)
-                    .padding(top = 24.dp),
-                verticalAlignment = Alignment.CenterVertically
-            ) {
+        Row(
+            modifier = Modifier
+                .fillMaxWidth(1f)
+                .padding(top = 24.dp),
+            verticalAlignment = Alignment.CenterVertically
+        ) {
 
-                Column() {
-                    Text(
-                        text = "Memory",
-                        style = TextStyle(fontSize = 16.sp, fontWeight = FontWeight.Bold),
-                        color = Color.White
-                    )
-
-                    Text(
-                        text = "262 MB can be cleaned",
-                        style = TextStyle(fontSize = 15.sp),
-                        color = Color.LightGray
-                    )
-
-                }
-
-                Spacer(modifier = Modifier.weight(1f))
-
-                Image(
-                    painter = painterResource(id = R.drawable.ic_forward),
-                    contentDescription = "forward"
+            Column() {
+                Text(
+                    text = "Cache Memory",
+                    style = TextStyle(fontSize = 16.sp, fontWeight = FontWeight.Bold),
+                    color = Color.White
                 )
 
-                Button(
-                    modifier = Modifier.padding(start = 8.dp),
-                    onClick = { /*TODO*/ },
-                    colors = ButtonDefaults.buttonColors(backgroundColor = Color.Red),
-                    shape = RoundedCornerShape(10.dp)
-                ) {
-                    Text(
-                        modifier = Modifier.padding(horizontal = 10.dp),
-                        text = "FIX",
-                        style = TextStyle(fontSize = 16.sp, fontWeight = FontWeight.Bold),
-                        color = Color.White,
-                        textAlign = TextAlign.Center
-                    )
+                Text(
+                    text = "125 MB can be cleaned",
+                    style = TextStyle(fontSize = 15.sp),
+                    color = Color.LightGray
+                )
 
-                }
             }
+
+            Spacer(modifier = Modifier.weight(1f))
+
+            Image(
+                painter = painterResource(id = R.drawable.ic_forward),
+                contentDescription = "forward"
+            )
+
+            Button(
+                modifier = Modifier.padding(start = 8.dp),
+                onClick = { /*TODO*/ },
+                colors = ButtonDefaults.buttonColors(backgroundColor = Color.Red),
+                shape = RoundedCornerShape(10.dp)
+            ) {
+                Text(
+                    modifier = Modifier.padding(horizontal = 10.dp),
+                    text = "FIX",
+                    style = TextStyle(fontSize = 16.sp, fontWeight = FontWeight.Bold),
+                    color = Color.White,
+                    textAlign = TextAlign.Center
+                )
+
+            }
+        }
 
         Divider(
             modifier = Modifier
@@ -125,13 +125,13 @@ fun MainScreen() {
 
             Column() {
                 Text(
-                    text = "Threats",
+                    text = "Temporary Files",
                     style = TextStyle(fontSize = 16.sp, fontWeight = FontWeight.Bold),
                     color = Color.White
                 )
 
                 Text(
-                    text = "15 apps not scanned",
+                    text = "50 MB can be cleaned",
                     style = TextStyle(fontSize = 15.sp),
                     color = Color.LightGray
                 )
@@ -176,13 +176,13 @@ fun MainScreen() {
 
             Column() {
                 Text(
-                    text = "Battery",
+                    text = "Residual Files",
                     style = TextStyle(fontSize = 16.sp, fontWeight = FontWeight.Bold),
                     color = Color.White
                 )
 
                 Text(
-                    text = "Can be optimized",
+                    text = "123 MB can be cleaned",
                     style = TextStyle(fontSize = 15.sp),
                     color = Color.LightGray
                 )
@@ -227,13 +227,13 @@ fun MainScreen() {
 
             Column() {
                 Text(
-                    text = "Anti Hacking Protection",
+                    text = "System Junk",
                     style = TextStyle(fontSize = 16.sp, fontWeight = FontWeight.Bold),
                     color = Color.White
                 )
 
                 Text(
-                    text = "Checked for breaches",
+                    text = "100 MB cleaned",
                     style = TextStyle(fontSize = 15.sp),
                     color = Color.LightGray
                 )
@@ -276,12 +276,36 @@ fun MainScreen() {
                 .background(Color.Gray)
         )
 
+        Column(
+            modifier = Modifier.fillMaxSize(),
+            horizontalAlignment = Alignment.CenterHorizontally,
+            verticalArrangement = Arrangement.Center
+        ) {
+
+            Box(
+                modifier = Modifier
+                    .clickable {
+                        /*navController.navigate(ScreenRoute.MainScreen.route)*/
+                    }
+                    .size(180.dp)
+                    .background(Color.Cyan, shape = CircleShape),
+                contentAlignment = Alignment.Center
+            ) {
+
+                Text(
+                    text = "CLEAN",
+                    fontSize = 36.sp,
+                    color = Color.White,
+                    fontWeight = FontWeight.ExtraBold
+                )
+
+            }
+        }
     }
 }
 
-
 @Preview(showBackground = true)
 @Composable
-fun MainScreenPreview () {
-    MainScreen()
+fun CleanScreenPreview() {
+    CleanScreen()
 }

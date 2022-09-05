@@ -15,6 +15,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
+import androidx.navigation.compose.rememberNavController
 import com.codeliner.security.ScreenRoute
 
 
@@ -25,20 +26,24 @@ fun StartScreen(
     Column(
         modifier = Modifier
             .fillMaxSize()
-            .background(Color.DarkGray),
-        horizontalAlignment = Alignment.CenterHorizontally
+            .background(Color.DarkGray)
+            .padding(40.dp),
+        horizontalAlignment = Alignment.CenterHorizontally,
+        verticalArrangement = Arrangement.Center
     ) {
+
         Text(
-            text = "We will help you \n with your first cleaning",
+            text = "We will help you with your first cleaning",
             color = Color.White,
-            fontSize = 32.sp,
+            fontSize = 22.sp,
             textAlign = TextAlign.Center
         )
 
         Row(
             modifier = Modifier
-                .fillMaxWidth(),
-            horizontalArrangement = Arrangement.SpaceAround
+                .fillMaxWidth()
+                .padding(top =  32.dp),
+            horizontalArrangement = Arrangement.SpaceBetween
         ) {
 
             Column(
@@ -59,12 +64,14 @@ fun StartScreen(
             Column(
                 horizontalAlignment = Alignment.CenterHorizontally
             ) {
+
                 Text(
                     text = "8 GB",
-                    fontSize = 48.sp,
+                    fontSize = 40.sp,
                     color = Color.White,
                     fontWeight = FontWeight.ExtraBold
                 )
+
                 Text(
                     text = "Free space",
                     color = Color.White,
@@ -73,23 +80,29 @@ fun StartScreen(
             }
         } // Row
 
-
         Box(
             modifier = Modifier
-                // TODO: реализовать переход на новый экран при нажатии Start
+                .padding(top =  32.dp)
                 .clickable {
-                    navController.navigate(ScreenRoute.SplashScreen.route)
+                    navController.navigate(ScreenRoute.MainScreen.route)
                 }
-                .size(200.dp)
+                .size(180.dp)
                 .background(Color.Cyan, shape = CircleShape),
             contentAlignment = Alignment.Center
         ){
+
             Text(
                 text = "Start",
-                fontSize = 48.sp,
+                fontSize = 36.sp,
                 color = Color.White,
                 fontWeight = FontWeight.ExtraBold
             )
         }
     } // Column
+}
+
+@Preview(showBackground = true)
+@Composable
+fun StartScreenPreview () {
+    StartScreen(rememberNavController())
 }
